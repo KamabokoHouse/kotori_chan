@@ -1,6 +1,5 @@
 package com.kamaboko.thun
 
-
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
@@ -11,24 +10,22 @@ import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.boot.test.web.client.getForEntity
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ApplicationTests(@Autowired val restTemplate: TestRestTemplate) {
+class ThunApplicationTests(@Autowired val restTemplate: TestRestTemplate) {
 
-	@BeforeAll
-	fun setup() {
-		println(">> Setup")
-	}
+    @BeforeAll
+    fun setup() {
+        println(">> Setup")
+    }
 
-	@AfterAll
-	fun tearDown() {
-		println(">> TearDown")
-	}
+    @AfterAll
+    fun tearDown() {
+        println(">> TearDown")
+    }
 
+    @Test
+    fun `Assert call response, content`() {
+        val entity = restTemplate.getForEntity<String>("/")
 
-	@Test
-	fun `Assert call response, content`() {
-		val entity = restTemplate.getForEntity<String>("/")
-
-		assertThat(entity.body).contains("(・8・)")
-	}
-
+        assertThat(entity.body).contains("(・8・)")
+    }
 }

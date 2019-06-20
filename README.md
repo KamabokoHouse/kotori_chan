@@ -15,6 +15,22 @@
 
 ```
 
+- LINT
+
+```
+
+./gradlew ktlint
+
+```
+
+- FORMAT
+
+```
+
+./gradlew ktlintFormat
+
+```
+
 ## Structure
 
 ### Application

@@ -12,5 +12,4 @@ class Kotori {
     fun get(): String {
         return "(・8・)"
     }
-
 }

@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 class ThunApplication
 
 fun main(args: Array<String>) {
-	runApplication<ThunApplication>(*args){
-		setBannerMode(Banner.Mode.OFF)
-	}
+    runApplication<ThunApplication>(*args) {
+        setBannerMode(Banner.Mode.OFF)
+    }
 }
